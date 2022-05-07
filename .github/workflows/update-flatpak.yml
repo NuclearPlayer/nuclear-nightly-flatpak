@@ -1,0 +1,37 @@
+name: Update Flatpak package
+
+on:
+  repository_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@master
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Checkout from Github
+        run: |
+          git clone git@github.com:flathub/org.js.nuclear.Nuclear.git /tmp/org.js.nuclear.Nuclear
+      - name: Use Node.js 14
+        uses: actions/setup-node@master
+        with:
+          version: "14"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run the update script
+        run: npm start -- --tag ${{ github.event.client_payload.tag }}
+      - name: Git add, commit and push
+        run: |
+          cd /tmp/org.js.nuclear.Nuclear
+          git config user.name nukeop
+          git config user.email 12746779+nukeop@users.noreply.github.com
+          git add -A
+          git commit -m "Update Nuclear Flatpak package"
+          git log
+          git push origin master
