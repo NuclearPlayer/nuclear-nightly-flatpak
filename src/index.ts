@@ -5,8 +5,8 @@ import download from "download";
 import { program } from "commander";
 import hasha from 'hasha';
 
-const jsonConfigTemplate = './data/org.js.nuclear.Nuclear.json.template.ts';
-const metainfoTemplate = './data/org.js.nuclear.Nuclear.metainfo.xml.template';
+import jsonConfigTemplate from './data/org.js.nuclear.Nuclear.json.template';
+import metainfoTemplate from './data/org.js.nuclear.Nuclear.metainfo.xml.template';
 
 const packageUrlTemplate = "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}.tar.gz";
 const packageFilenameTemplate = "nuclear-{{tag}}.tar.gz";
@@ -75,5 +75,4 @@ const options = program.opts();
     } catch (e) {
         console.error("Error writing files", e);
     }
-
 })();

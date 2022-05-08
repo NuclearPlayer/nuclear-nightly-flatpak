@@ -2,6 +2,11 @@ name: Update Flatpak package
 
 on:
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      - name: tag
+        required: true
+        description: The tag to use for the update
 
 jobs:
   update:
@@ -25,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run the update script
-        run: npm start -- --tag ${{ github.event.client_payload.tag }}
+        run: npm start -- --tag ${{ github.event.client_payload.tag || github.event.inputs.tag }}
       - name: Git add, commit and push
         run: |
           cd /tmp/org.js.nuclear.Nuclear
