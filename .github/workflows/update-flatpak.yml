@@ -2,11 +2,9 @@ name: Update Flatpak package
 
 on:
   repository_dispatch:
-    branches:
-      - master
   workflow_dispatch:
     inputs:
-      - name: tag
+      tag:
         required: true
         description: The tag to use for the update
 
