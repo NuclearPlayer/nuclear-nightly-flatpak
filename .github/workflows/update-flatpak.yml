@@ -2,6 +2,8 @@ name: Update Flatpak package
 
 on:
   repository_dispatch:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       - name: tag
