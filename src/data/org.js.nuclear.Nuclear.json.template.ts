@@ -3,7 +3,11 @@ export default `{
     "branch": "stable",
     "command": "run.sh",
     "base": "org.electronjs.Electron2.BaseApp",
-    "base-version": "20.08",
+    "base-version": "22.08",    
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+    "separate-locales": false,
     "finish-args": [
         "--share=network",
         "--share=ipc",
@@ -53,10 +57,6 @@ export default `{
                 }
             ]
         }
-    ],
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
-    "sdk": "org.freedesktop.Sdk",
-    "separate-locales": false
+    ]
 }
 `;
