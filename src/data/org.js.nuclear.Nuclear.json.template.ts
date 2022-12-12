@@ -12,6 +12,7 @@ export default `{
         "--share=network",
         "--share=ipc",
         "--socket=x11",
+        "--device=dri",
         "--filesystem=home",
         "--socket=pulseaudio"
     ],
