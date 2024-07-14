@@ -35,7 +35,7 @@ export default `{
                 {
                     "sha256": "{{tarballsha}}",
                     "type": "archive",
-                    "url": "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}.tar.gz"
+                    "url": "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}-x64.tar.gz"
                 },
                 {
                     "path": "org.js.nuclear.Nuclear.metainfo.xml",
