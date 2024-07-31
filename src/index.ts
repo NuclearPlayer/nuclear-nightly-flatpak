@@ -8,8 +8,8 @@ import hasha from 'hasha';
 import jsonConfigTemplate from './data/org.js.nuclear.Nuclear.json.template';
 import metainfoTemplate from './data/org.js.nuclear.Nuclear.metainfo.xml.template';
 
-const packageUrlTemplate = "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}.tar.gz";
-const packageFilenameTemplate = "nuclear-{{tag}}.tar.gz";
+const packageUrlTemplate = "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}-x64.tar.gz";
+const packageFilenameTemplate = "nuclear-{{tag}}-x64.tar.gz";
 
 program
     .option(

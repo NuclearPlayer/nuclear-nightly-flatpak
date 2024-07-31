@@ -3,11 +3,16 @@ export default `{
     "branch": "stable",
     "command": "run.sh",
     "base": "org.electronjs.Electron2.BaseApp",
-    "base-version": "20.08",
+    "base-version": "22.08",    
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+    "separate-locales": false,
     "finish-args": [
         "--share=network",
         "--share=ipc",
         "--socket=x11",
+        "--device=dri",
         "--filesystem=home",
         "--socket=pulseaudio"
     ],
@@ -30,7 +35,7 @@ export default `{
                 {
                     "sha256": "{{tarballsha}}",
                     "type": "archive",
-                    "url": "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}.tar.gz"
+                    "url": "https://github.com/nukeop/nuclear/releases/download/{{tag}}/nuclear-{{tag}}-x64.tar.gz"
                 },
                 {
                     "path": "org.js.nuclear.Nuclear.metainfo.xml",
@@ -53,10 +58,6 @@ export default `{
                 }
             ]
         }
-    ],
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
-    "sdk": "org.freedesktop.Sdk",
-    "separate-locales": false
+    ]
 }
 `;
