@@ -14,7 +14,7 @@ export default `{
         "--socket=x11",
         "--device=dri",
         "--filesystem=xdg-music",
-        "--filesystem=xdg-downloads",
+        "--filesystem=xdg-download",
         "--socket=pulseaudio"
     ],
     "modules": [
