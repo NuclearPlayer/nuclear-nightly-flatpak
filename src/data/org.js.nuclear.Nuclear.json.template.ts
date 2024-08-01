@@ -13,7 +13,8 @@ export default `{
         "--share=ipc",
         "--socket=x11",
         "--device=dri",
-        "--filesystem=home",
+        "--filesystem=xdg-music",
+        "--filesystem=xdg-downloads",
         "--socket=pulseaudio"
     ],
     "modules": [
