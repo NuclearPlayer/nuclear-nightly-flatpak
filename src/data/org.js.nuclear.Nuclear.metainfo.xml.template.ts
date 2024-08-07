@@ -2,7 +2,7 @@ export default `<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
     <id>org.js.nuclear.Nuclear</id>
     <metadata_license>FSFAP</metadata_license>
-    <project_license>GPL-3.0+</project_license>
+    <project_license>AGPL-3.0-only</project_license>
     <name>nuclear music player</name>
     <summary>A electron based music player</summary>
     <developer id="org.js.nuclear">
