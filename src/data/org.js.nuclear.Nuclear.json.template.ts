@@ -1,6 +1,5 @@
 export default `{
     "app-id": "org.js.nuclear.Nuclear",
-    "branch": "stable",
     "command": "run.sh",
     "base": "org.electronjs.Electron2.BaseApp",
     "base-version": "22.08",    
