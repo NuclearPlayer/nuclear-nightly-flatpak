@@ -14,7 +14,8 @@ export default `{
         "--device=dri",
         "--filesystem=xdg-music",
         "--filesystem=xdg-download",
-        "--socket=pulseaudio"
+        "--socket=pulseaudio",
+        "--own-name=org.mpris.MediaPlayer2.nuclear"
     ],
     "modules": [
         {
