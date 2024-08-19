@@ -83,7 +83,7 @@ export default `<?xml version="1.0" encoding="UTF-8"?>
     <url type="homepage">https://nuclear.js.org</url>
     <project_group>Nuclear</project_group>
     <releases>
-        <release version="{{tag}}" date="{{date}">
+        <release version="{{tag}}" date="{{date}}">
         <description>
             <p>See release notes on Github for detailed updates and changes.</p>
         </description>
