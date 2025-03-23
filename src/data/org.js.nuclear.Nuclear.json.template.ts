@@ -2,15 +2,16 @@ export default `{
     "app-id": "org.js.nuclear.Nuclear",
     "command": "run.sh",
     "base": "org.electronjs.Electron2.BaseApp",
-    "base-version": "22.08",    
+    "base-version": "24.08",    
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "22.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "separate-locales": false,
     "finish-args": [
         "--share=network",
         "--share=ipc",
         "--socket=x11",
+        "--socket=wayland",
         "--device=dri",
         "--filesystem=xdg-music",
         "--filesystem=xdg-download",
@@ -52,7 +53,13 @@ export default `{
                 },
                 {
                     "commands": [
-                        "zypak-wrapper /app/main/nuclear"
+                        "#!/bin/bash",
+                        "if [ \"$GDK_BACKEND\" = \"wayland\" ] || [ \"$XDG_SESSION_TYPE\" = \"wayland\" ]; then",
+                        "  export GDK_BACKEND=wayland",
+                        "  zypak-wrapper /app/main/nuclear --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandWindowDecorations \"$@\"",
+                        "else",
+                        "  zypak-wrapper /app/main/nuclear \"$@\"",
+                        "fi"
                     ],
                     "dest-filename": "run.sh",
                     "type": "script"

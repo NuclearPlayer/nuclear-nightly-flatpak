@@ -22,10 +22,10 @@ jobs:
       - name: Checkout from Github
         run: |
           git clone git@github.com:flathub/org.js.nuclear.Nuclear.git /tmp/org.js.nuclear.Nuclear
-      - name: Use Node.js 14
+      - name: Use Node.js 22
         uses: actions/setup-node@master
         with:
-          version: "14"
+          version: "22"
           cache: npm
       - name: Install dependencies
         run: npm ci
