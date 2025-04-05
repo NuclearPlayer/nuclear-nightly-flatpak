@@ -10,7 +10,7 @@ export default `{
     "finish-args": [
         "--share=network",
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--filesystem=xdg-music",
