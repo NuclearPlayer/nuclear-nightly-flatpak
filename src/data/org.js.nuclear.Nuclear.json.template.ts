@@ -54,11 +54,11 @@ export default `{
                 {
                     "commands": [
                         "#!/bin/bash",
-                        "if [ \"$GDK_BACKEND\" = \"wayland\" ] || [ \"$XDG_SESSION_TYPE\" = \"wayland\" ]; then",
+                        "if [ \\\"$GDK_BACKEND\\\" = \\\"wayland\\\" ] || [ \\\"$XDG_SESSION_TYPE\\\" = \\\"wayland\\\" ]; then",
                         "  export GDK_BACKEND=wayland",
-                        "  zypak-wrapper /app/main/nuclear --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandWindowDecorations \"$@\"",
+                        "  zypak-wrapper /app/main/nuclear --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandWindowDecorations \\\"$@\\\"",
                         "else",
-                        "  zypak-wrapper /app/main/nuclear \"$@\"",
+                        "  zypak-wrapper /app/main/nuclear \\\"$@\\\"",
                         "fi"
                     ],
                     "dest-filename": "run.sh",
